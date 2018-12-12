@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -720,18 +720,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.08079293, y: 0.010387629}
+  m_Offset: {x: 0.00086930394, y: 0.0029872954}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.58, y: 0.39}
+    oldSize: {x: 0.36, y: 0.36}
     newSize: {x: 0.58, y: 0.39}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3630131, y: 0.36922473}
+  m_Size: {x: 0.3630131, y: 0.36034423}
   m_EdgeRadius: 0
 --- !u!212 &953225924
 SpriteRenderer:
@@ -806,6 +806,11 @@ MonoBehaviour:
   health: 1
   particleEffect: {fileID: 1709095320384966, guid: 73fca2f3f962458489437e887f1b1fbb,
     type: 2}
+  speed: 3
+  facingUp: {fileID: 21300010, guid: 1a853d6d4e7498a429bdd64da34fa5d3, type: 3}
+  facingDown: {fileID: 21300008, guid: 1a853d6d4e7498a429bdd64da34fa5d3, type: 3}
+  facingRight: {fileID: 21300020, guid: 1a853d6d4e7498a429bdd64da34fa5d3, type: 3}
+  facingLeft: {fileID: 21300022, guid: 1a853d6d4e7498a429bdd64da34fa5d3, type: 3}
 --- !u!1 &1403550405
 GameObject:
   m_ObjectHideFlags: 0

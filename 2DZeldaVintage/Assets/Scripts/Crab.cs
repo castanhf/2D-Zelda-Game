@@ -7,7 +7,7 @@ public class Crab : MonoBehaviour {
     public int health;
     public GameObject particleEffect;
     SpriteRenderer spriteRenderer;
-    int direction = 0;
+    int direction;
     float timer = 1.5f; // two seconds
     public float speed;
     public Sprite facingUp;
@@ -17,7 +17,8 @@ public class Crab : MonoBehaviour {
     // Use this for initialization
     void Start () {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = facingUp;
+        // spriteRenderer.sprite = facingUp;
+        direction = Random.Range(0, 4);
 	}
 	
 	// Update is called once per frame
@@ -25,7 +26,7 @@ public class Crab : MonoBehaviour {
         timer -= Time.deltaTime;
         if (timer <= 0) {
             timer = 1.5f;
-            direction = Random.Range(0, 3); // random number from 0 to 3
+            direction = Random.Range(0, 4); // random number from 0 to 3
         }
         Movement();
 	}
@@ -61,7 +62,24 @@ public class Crab : MonoBehaviour {
             }
             col.GetComponent<Sword>().createParticle();
             GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().canAttack = true;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().canMove = true;
             Destroy(col.gameObject);
+        }
+    }
+    void OnCollisionEnter2D(Collision2D col) {
+        if (col.gameObject.tag == "Player") {
+            health--; // crab loses one point of health
+            if (!col.gameObject.GetComponent<Player>().iniFrame) {
+                col.gameObject.GetComponent<Player>().currentHealth--; // player loses one point of health
+                col.gameObject.GetComponent<Player>().iniFrame = true; // 
+            }
+            if (health <= 0) {
+                Instantiate(particleEffect, transform.position, transform.rotation);
+                Destroy(gameObject);
+            }
+        }
+        if (col.gameObject.tag == "Wall") {
+            direction = Random.Range(0, 3);
         }
     }
 }

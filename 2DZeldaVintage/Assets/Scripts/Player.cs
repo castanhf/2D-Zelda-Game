@@ -9,11 +9,14 @@ public class Player : MonoBehaviour {
     Animator anim;
     public Image[] hearts;
     public int maxHealth;
-    int currentHealth;
+    public int currentHealth;
     public GameObject sword;
     public float thrustPower;   // will control speed of the sword
     public bool canMove;
     public bool canAttack;
+    public bool iniFrame;
+    SpriteRenderer sr;
+    float iniTimer = 1f; // 1 second
 
 	// Use this for initialization
 	void Start () {
@@ -22,16 +25,9 @@ public class Player : MonoBehaviour {
         getHealth();
         canMove = true;
         canAttack = true;
+        iniFrame = false;
+        sr = GetComponent<SpriteRenderer>();
 	}
-
-    void getHealth() {
-        for (int i = 0; i < hearts.Length; i++) {
-            hearts[i].gameObject.SetActive(false);
-        }
-        for (int i = 0; i <= currentHealth - 1; i++) {
-            hearts[i].gameObject.SetActive(true);
-        }
-    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -40,7 +36,7 @@ public class Player : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Space)) {
             Attack();
         }
-
+        #region // Master code - get/lose health - P or L keyButtons. Also, minimum health exception handling
         if (Input.GetKeyDown(KeyCode.P)) {
             currentHealth--;
         }
@@ -48,15 +44,41 @@ public class Player : MonoBehaviour {
         {
             currentHealth++;
         }
-        if (currentHealth > maxHealth)
-        {
-            currentHealth = maxHealth;
-        }
         if (currentHealth < 0)
         {
             currentHealth = 0;
         }
+        #endregion
+        if (currentHealth > maxHealth) {
+            currentHealth = maxHealth;
+        }
+        
+        // If we get hurt, we become invincible for 1 second
+        if (iniFrame == true) {
+            iniTimer -= Time.deltaTime;
+            int rn = Random.Range(0, 100);
+            // Character is flickering
+            if (rn < 50) sr.enabled = false;
+            if (rn > 50) sr.enabled = true;
+            if (iniTimer <= 0) {
+                iniTimer = 1f;
+                iniFrame = false;
+                sr.enabled = true;
+            }
+        }
         getHealth();
+    }
+
+    void getHealth()
+    {
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            hearts[i].gameObject.SetActive(false);
+        }
+        for (int i = 0; i <= currentHealth - 1; i++)
+        {
+            hearts[i].gameObject.SetActive(true);
+        }
     }
 
     void Attack() {
@@ -67,8 +89,9 @@ public class Player : MonoBehaviour {
         canMove = false;
         canAttack = false;
         GameObject newSword = Instantiate(sword, transform.position, sword.transform.rotation);
-        newSword.GetComponent<Sword>().special = true; // This accesses Sword script
-        if(currentHealth == maxHealth) {
+        // This accesses Sword script but it is not necessary
+        // newSword.GetComponent<Sword>().special = true;
+        if (currentHealth == maxHealth) {
             newSword.GetComponent<Sword>().special = true;
             canMove = true;
             thrustPower = 500;
@@ -123,4 +146,17 @@ public class Player : MonoBehaviour {
             anim.speed = 0;
         }
     }
+
+    void OnTriggerEnter2D(Collider2D col) {
+        if (col.gameObject.tag == "EnemyBullet") {
+            if (!iniFrame) {
+                iniFrame = true;
+                currentHealth--;
+                // Upgrade function will take care of this afterwards
+            }
+            col.gameObject.GetComponent<Bullet>().CreateParticle();
+            Destroy(col.gameObject);
+        }
+    }
+
 }

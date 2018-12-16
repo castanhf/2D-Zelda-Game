@@ -28,6 +28,7 @@ public class Sword : MonoBehaviour {
         }
         specialTimer -= Time.deltaTime; // Subtracted each frame
         if(specialTimer <= 0) {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().canMove = true;
             GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().canAttack = true;
             Instantiate(swordParticle, transform.position, transform.rotation);
             Destroy(gameObject); // Eliminates this particular gameObject instantiation

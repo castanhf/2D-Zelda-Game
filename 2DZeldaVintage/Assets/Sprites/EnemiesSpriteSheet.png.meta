@@ -539,10 +539,10 @@ TextureImporter:
       name: EnemiesSpriteSheet_20
       rect:
         serializedVersion: 2
-        x: 378
-        y: 824
-        width: 50
-        height: 40
+        x: 388
+        y: 826
+        width: 37
+        height: 37
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -559,10 +559,10 @@ TextureImporter:
       name: EnemiesSpriteSheet_21
       rect:
         serializedVersion: 2
-        x: 440
-        y: 824
-        width: 41
-        height: 43
+        x: 441
+        y: 826
+        width: 37
+        height: 37
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -580,9 +580,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 388
-        y: 763
-        width: 40
-        height: 49
+        y: 774
+        width: 37
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -599,10 +599,10 @@ TextureImporter:
       name: EnemiesSpriteSheet_23
       rect:
         serializedVersion: 2
-        x: 440
-        y: 763
-        width: 39
-        height: 49
+        x: 442
+        y: 773
+        width: 36
+        height: 37
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -779,10 +779,10 @@ TextureImporter:
       name: EnemiesSpriteSheet_32
       rect:
         serializedVersion: 2
-        x: 387
-        y: 643
-        width: 50
-        height: 39
+        x: 398
+        y: 644
+        width: 36
+        height: 37
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -799,10 +799,10 @@ TextureImporter:
       name: EnemiesSpriteSheet_33
       rect:
         serializedVersion: 2
-        x: 460
-        y: 643
-        width: 49
-        height: 42
+        x: 462
+        y: 644
+        width: 36
+        height: 37
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -900,9 +900,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 397
-        y: 570
-        width: 52
-        height: 50
+        y: 581
+        width: 37
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -919,10 +919,10 @@ TextureImporter:
       name: EnemiesSpriteSheet_39
       rect:
         serializedVersion: 2
-        x: 460
-        y: 570
-        width: 39
-        height: 50
+        x: 462
+        y: 581
+        width: 37
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

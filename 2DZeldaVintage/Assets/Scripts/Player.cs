@@ -157,6 +157,12 @@ public class Player : MonoBehaviour {
             col.gameObject.GetComponent<Bullet>().CreateParticle();
             Destroy(col.gameObject);
         }
+
+        if (col.gameObject.tag == "Potion") {
+            maxHealth++;
+            currentHealth = maxHealth;
+            Destroy(col.gameObject);
+        }
     }
 
 }

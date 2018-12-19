@@ -8,7 +8,7 @@ public class Crab : MonoBehaviour {
     public GameObject particleEffect;
     SpriteRenderer spriteRenderer;
     int direction;
-    float timer = 1.5f; // two seconds
+    float timer = 1f; // two seconds
     public float speed;
     public Sprite facingUp;
     public Sprite facingDown;
@@ -79,7 +79,10 @@ public class Crab : MonoBehaviour {
             }
         }
         if (col.gameObject.tag == "Wall") {
-            direction = Random.Range(0, 3);
+            direction--;
+            if (direction <= 0) {
+                direction = 3;
+            }
         }
     }
 }

@@ -88,6 +88,7 @@ public class Player : MonoBehaviour {
         }
         canMove = false;
         canAttack = false;
+        thrustPower = 250;
         GameObject newSword = Instantiate(sword, transform.position, sword.transform.rotation);
         // This accesses Sword script but it is not necessary
         // newSword.GetComponent<Sword>().special = true;
@@ -159,9 +160,13 @@ public class Player : MonoBehaviour {
         }
 
         if (col.gameObject.tag == "Potion") {
-            maxHealth++;
             currentHealth = maxHealth;
             Destroy(col.gameObject);
+            if (maxHealth >= 5) {
+                return;
+            }
+            maxHealth++;
+            currentHealth = maxHealth;
         }
     }
 

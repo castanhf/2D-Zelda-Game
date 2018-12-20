@@ -14,10 +14,13 @@ public class Dragon : MonoBehaviour {
     float attackTimer = 2f;
     public GameObject projectile;
     public float thrustPower;
+    float changeTimer = .2f;
+    bool shouldChange;
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
         dir = Random.Range(0, 4);
+        shouldChange = false;
 	}
 	
 	// Update is called once per frame
@@ -34,6 +37,13 @@ public class Dragon : MonoBehaviour {
             canAttack = true;
         }
         Attack();
+        if (shouldChange) {
+            changeTimer -= Time.deltaTime;
+            if (changeTimer <= 0) {
+                shouldChange = false;
+                changeTimer = .2f;  
+            }
+        }
 	}
 
     void Attack() {
@@ -114,7 +124,22 @@ public class Dragon : MonoBehaviour {
         }
         if (col.gameObject.tag == "Wall")
         {
-            dir = Random.Range(0, 3);
+            if (shouldChange)
+                return;
+
+            if (dir == 0) {
+                dir = 2;
+            }
+            else if (dir == 1) {
+                dir = 3;
+            }
+            else if (dir == 3) {
+                dir = 1;
+            }
+            else if (dir == 2) {
+                dir = 0;
+            }
+            shouldChange = true;
         }
     }
 }

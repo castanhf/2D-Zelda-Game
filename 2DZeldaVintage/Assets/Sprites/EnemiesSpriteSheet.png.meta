@@ -619,10 +619,10 @@ TextureImporter:
       name: EnemiesSpriteSheet_24
       rect:
         serializedVersion: 2
-        x: 13
-        y: 677
-        width: 60
-        height: 80
+        x: 32
+        y: 687
+        width: 41
+        height: 61
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -642,7 +642,7 @@ TextureImporter:
         x: 99
         y: 687
         width: 41
-        height: 70
+        height: 61
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -662,7 +662,7 @@ TextureImporter:
         x: 163
         y: 687
         width: 41
-        height: 70
+        height: 61
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -681,8 +681,8 @@ TextureImporter:
         serializedVersion: 2
         x: 234
         y: 687
-        width: 49
-        height: 70
+        width: 40
+        height: 61
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -759,9 +759,9 @@ TextureImporter:
       name: EnemiesSpriteSheet_31
       rect:
         serializedVersion: 2
-        x: 232
+        x: 233
         y: 609
-        width: 51
+        width: 43
         height: 61
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

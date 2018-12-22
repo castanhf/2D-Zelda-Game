@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  particleEffect: {fileID: 1244876883949826, guid: f9ba7184ddd912c42b7b89d2129a4999,
+  particleEffect: {fileID: 1763782450488874, guid: e034522c150125c45b854019bb12ae4b,
     type: 2}
   speed: 4
   facingUp: {fileID: 21300066, guid: 1a853d6d4e7498a429bdd64da34fa5d3, type: 3}

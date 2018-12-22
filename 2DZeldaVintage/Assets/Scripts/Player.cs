@@ -21,7 +21,13 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
-        currentHealth = maxHealth;
+
+        if (PlayerPrefs.HasKey("maxHealth")) {
+            LoadGame();
+        }
+        else {
+            currentHealth = maxHealth;
+        }
         getHealth();
         canMove = true;
         canAttack = true;
@@ -48,11 +54,11 @@ public class Player : MonoBehaviour {
         {
             currentHealth = 0;
         }
-        #endregion
         if (currentHealth > maxHealth) {
             currentHealth = maxHealth;
         }
-        
+        #endregion
+
         // If we get hurt, we become invincible for 1 second
         if (iniFrame == true) {
             iniTimer -= Time.deltaTime;
@@ -168,6 +174,16 @@ public class Player : MonoBehaviour {
             maxHealth++;
             currentHealth = maxHealth;
         }
+    }
+
+    public void SaveGame() {
+        PlayerPrefs.SetInt("maxHealth", maxHealth);
+        PlayerPrefs.SetInt("currentHealth", currentHealth);
+    }
+
+    void LoadGame() {
+        maxHealth = PlayerPrefs.GetInt("maxHealth");
+        currentHealth = PlayerPrefs.GetInt("currentHealth");
     }
 
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
@@ -22,12 +23,20 @@ public class Player : MonoBehaviour {
 	void Start () {
         anim = GetComponent<Animator>();
 
-        if (PlayerPrefs.HasKey("maxHealth")) {
-            LoadGame();
+        // Checks if the current scene index is 0, if it is, reset player prefs.
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            PlayerPrefs.DeleteAll();
         }
-        else {
+
+        // Sets player prefs
+        if (!PlayerPrefs.HasKey("maxHealth"))
+        {
+            maxHealth = 2;
             currentHealth = maxHealth;
+            SaveGame();
         }
+        LoadGame(); // Loads the stats
         getHealth();
         canMove = true;
         canAttack = true;
@@ -50,9 +59,10 @@ public class Player : MonoBehaviour {
         {
             currentHealth++;
         }
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
-            currentHealth = 0;
+            PlayerPrefs.DeleteAll();
+            SceneManager.LoadScene(0);
         }
         if (currentHealth > maxHealth) {
             currentHealth = maxHealth;

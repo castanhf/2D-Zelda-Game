@@ -134,16 +134,16 @@ public class Wizard : MonoBehaviour
         if (col.gameObject.tag == "Sword")
         {
             health--;
+            col.gameObject.GetComponent<Sword>().createParticle();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().canAttack = true;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().canMove = true;
+            Destroy(col.gameObject);
             if (health <= 0)
             {
                 Instantiate(deathParticle, transform.position, transform.rotation);
                 Instantiate(potion, rewardPosition.position, potion.transform.rotation);
                 Destroy(gameObject);
-            }
-            col.gameObject.GetComponent<Sword>().createParticle();
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().canAttack = true;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().canMove = true;
-            Destroy(col.gameObject);
+            }   
         }
     }
 

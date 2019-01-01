@@ -79,6 +79,7 @@ public class Crab : MonoBehaviour {
     }
     void OnCollisionEnter2D(Collision2D col) {
         if (col.gameObject.tag == "Player") {
+
             health--; // crab loses one point of health
             if (!col.gameObject.GetComponent<Player>().iniFrame) {
                 col.gameObject.GetComponent<Player>().currentHealth--; // player loses one point of health
@@ -89,6 +90,7 @@ public class Crab : MonoBehaviour {
                 Destroy(gameObject);
             }
         }
+
         if (col.gameObject.tag == "Wall") {
             
             if (shouldChange == true) {

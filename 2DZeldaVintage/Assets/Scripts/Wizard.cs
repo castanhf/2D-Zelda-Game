@@ -151,7 +151,7 @@ public class Wizard : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            health--; // Dragon loses one point of health
+            //health--; // Dragon loses one point of health
             if (!col.gameObject.GetComponent<Player>().iniFrame)
             {
                 col.gameObject.GetComponent<Player>().currentHealth--; // player loses one point of health

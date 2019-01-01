@@ -36,7 +36,9 @@ public class Dragon : MonoBehaviour {
             attackTimer = 2f;
             canAttack = true;
         }
+
         Attack();
+
         if (shouldChange) {
             changeTimer -= Time.deltaTime;
             if (changeTimer <= 0) {
@@ -108,8 +110,8 @@ public class Dragon : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Player")
-        {
+        if (col.gameObject.tag == "Player") {
+
             health--; // Dragon loses one point of health
             if (!col.gameObject.GetComponent<Player>().iniFrame)
             {
@@ -122,9 +124,10 @@ public class Dragon : MonoBehaviour {
                 Destroy(gameObject);
             }
         }
+
         if (col.gameObject.tag == "Wall")
         {
-            if (shouldChange)
+            if (shouldChange == true)
                 return;
 
             if (dir == 0) {

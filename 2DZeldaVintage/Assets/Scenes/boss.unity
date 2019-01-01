@@ -265,6 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 413579725}
   - component: {fileID: 413579724}
+  - component: {fileID: 413579726}
   m_Layer: 0
   m_Name: DungeonLeftWall
   m_TagString: Wall
@@ -325,12 +326,37 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 413579723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.99, y: 1.04, z: 0}
-  m_LocalScale: {x: 3, y: 3.15, z: 1}
+  m_LocalPosition: {x: -8.99, y: 1.058, z: 0}
+  m_LocalScale: {x: 3, y: 3.1405501, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &413579726
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 413579723}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.005952701, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.88, y: 3.67}
+    newSize: {x: 0.88, y: 3.67}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8919054, y: 3.67}
+  m_EdgeRadius: 0
 --- !u!1001 &710769672
 Prefab:
   m_ObjectHideFlags: 0
@@ -349,7 +375,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4102263581282182, guid: 685f6be2d63d26949a55ce06e98756af, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.96
+      value: -1.71
       objectReference: {fileID: 0}
     - target: {fileID: 4102263581282182, guid: 685f6be2d63d26949a55ce06e98756af, type: 2}
       propertyPath: m_LocalPosition.z
@@ -440,6 +466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 975651968}
   - component: {fileID: 975651967}
+  - component: {fileID: 975651969}
   m_Layer: 0
   m_Name: DungeonBottomWall
   m_TagString: Wall
@@ -506,6 +533,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &975651969
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 975651966}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.011338502}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.27, y: 0.76}
+    newSize: {x: 2.27, y: 0.76}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.27, y: 0.782677}
+  m_EdgeRadius: 0
 --- !u!1 &1480765722
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1480765724}
   - component: {fileID: 1480765723}
+  - component: {fileID: 1480765725}
   m_Layer: 0
   m_Name: DungeonRightWall
   m_TagString: Wall
@@ -581,6 +634,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1480765725
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1480765722}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.011905104, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.88, y: 3.69}
+    newSize: {x: 0.88, y: 3.69}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9038102, y: 3.69}
+  m_EdgeRadius: 0
 --- !u!1 &2069833695
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +668,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2069833697}
   - component: {fileID: 2069833696}
+  - component: {fileID: 2069833698}
   m_Layer: 0
   m_Name: DungeonTopWall
   m_TagString: Wall
@@ -656,6 +735,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2069833698
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2069833695}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.011338234}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.27, y: 0.74}
+    newSize: {x: 2.27, y: 0.74}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.27, y: 0.7626765}
+  m_EdgeRadius: 0
 --- !u!1001 &2115450580
 Prefab:
   m_ObjectHideFlags: 0
